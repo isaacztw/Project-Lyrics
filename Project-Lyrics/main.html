@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lyrics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+  <div id="globalStatusBanner" class="global-status-banner" role="status" aria-live="polite" aria-hidden="true">
+    <p id="globalStatusMessage" class="global-status-message"></p>
+    <button id="globalStatusClose" class="global-status-close" type="button" aria-label="Fechar aviso">×</button>
+  </div>
+
+  <!-- Navbar fixa com menu, busca e acesso rapido ao perfil -->
+  <header>
+    <div class="Logo-container">
+      <button class="menu-toggle" id="menuToggleBtn" type="button" aria-label="Abrir menu"
+        aria-controls="floatingMenuDrawer" aria-expanded="false" title="Menu">
+        <span aria-hidden="true">☰</span>
+      </button>
+      <a href="main.html" class="logo">
+        <img src="img/Lyrics.png" alt="Logo do site" class="Logo" />
+      </a>
+    </div>
+
+    <div class="search-container">
+      <input id="searchInput" type="text" placeholder="Qual o som de hoje?" autocomplete="off" />
+      <div id="searchResults" class="search-results-dropdown" aria-hidden="true"></div>
+    </div>
+
+
+    <div class="profile-actions">
+      <button class="user user-button" id="openProfileBtn" type="button" aria-label="Abrir perfil" aria-haspopup="true"
+        aria-controls="profileQuickMenu" aria-expanded="false" data-tooltip="Perfil">
+        <img class="user-avatar" src="img/avatar-profile.svg" alt="Avatar do usuario" />
+      </button>
+
+      <div id="profileQuickMenu" class="profile-quick-menu" role="menu" aria-hidden="true">
+        <button id="openProfileMenuItem" class="profile-quick-item" type="button" role="menuitem">Meu perfil</button>
+        <button id="logoutItem" class="profile-quick-item" type="button" role="menuitem">Sair</button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Conteudo principal da home -->
+  <div class="layout">
+    <main class="main">
+      <div class="principal">
+        <div id="homePageView">
+        <!-- Banner principal de destaque -->
+        <section id="inicio" class="hero">
+          <div class="hero-content">
+            <h2>Descubra sua próxima musica favorita.</h2>
+            <p>Acesse milhões de letras, traduções e novidades do mundo da música com um toque premium.</p>
+            <button class="btn-premium" type="button">ASSINAR PREMIUM</button>
+          </div>
+        </section>
+
+        <!-- Cabecalho da secao com controles do carrossel -->
+        <section id="musicas">
+          <div class="section-header section-header-carousel">
+            <h2>Novidades e Populares</h2>
+            <div class="section-header-actions">
+              <div class="carousel-controls" aria-label="Controles do carrossel">
+                <button id="cardsPrevBtn" class="carousel-button" type="button"
+                  aria-label="Voltar cards">&#10094;</button>
+                <button id="cardsNextBtn" class="carousel-button" type="button"
+                  aria-label="Avancar cards">&#10095;</button>
+              </div>
+              <a href="#" class="see-all"></a>
+            </div>
+          </div>
+
+          <!-- Carrossel de musicas em destaque -->
+          <div class="cards-carousel">
+            <div class="cards cards-track">
+              <div class="card" data-audio-file="Wolves.mp3">
+                <div class="card-image">
+                  <img class="static" src="img/lifeofpablo.jpeg" alt="Música 1">
+                  <img class="gif" src="img/kanyewolves.gif" alt="Kanye animado">
+                </div>
+                <p class="card-title">Wolves</p>
+                <p class="card-subtitle">Kanye West - The Life of Pablo</p>
+                <p class="card-description">Música em Destaque</p>
+              </div>
+              <div class="card" data-audio-file="Ghost Satanized Official Music Video.mp3">
+                <div class="card-image">
+                  <img class="static" src="img/skeleta.jpeg" alt="Música 2">
+                  <img class="gif" src="img/perpetua.gif" alt="Skeleta animado">
+                </div>
+                <p class="card-title">Satanized</p>
+                <p class="card-subtitle">Ghost - Skeletá</p>
+                <p class="card-description">Metal Moderno</p>
+              </div>
+              <div class="card" data-audio-file="Mitski I ll Change for You.mp3">
+                <div class="card-image">
+                  <img class="static" src="img/Mitski.jpg" alt="Música 3">
+                  <img class="gif" src="img/mitskigif.gif" alt="Mitski animado">
+                </div>
+                <p class="card-title">I'll Die For You</p>
+                <p class="card-subtitle">Mitski - Nothing's About to Happen to Me</p>
+                <p class="card-description">Indie</p>
+              </div>
+              <div class="card" data-song-id="square-hammer" data-audio-file="Square Hammer.mp3">
+                <div class="card-image">
+                  <img class="static" src="img/ceremony.jpg" alt="Música 4">
+                  <img class="gif" src="img/terzo.gif" alt="Ceremony animado">
+                </div>
+                <p class="card-title">Square Hammer</p>
+                <p class="card-subtitle">Ghost - Ceremony and Devotion</p>
+                <p class="card-description">Ao Vivo</p>
+              </div>
+              <div class="card" data-audio-file="Snuff 2012 Remaster.mp3">
+                <div class="card-image">
+                  <img class="static" src="img/Slipknot.jpg" alt="Música 5">
+                  <img class="gif" src="img/Slipknotgif.gif" alt="Slipknot animado">
+                </div>
+                <p class="card-title">Snuff</p>
+                <p class="card-subtitle">Slipknot - All Hope Is Gone</p>
+                <p class="card-description">Metal Anos 2000</p>
+              </div>
+              <div class="card" data-audio-file="Deftones Diamond Eyes Official Lyric Video.mp3">
+                <div class="card-image">
+                  <img class="static" src="img/deftones.jfif" alt="Música 6">
+                  <img class="gif" src="img/deftonesgif.gif" alt="Deftones animado">
+                </div>
+                <p class="card-title">Diamond Eyes</p>
+                <p class="card-subtitle">Deftones - Diamond Eyes</p>
+                <p class="card-description">Para Momentos Melancólicos</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="album">
+          <div class="section-header section-header-carousel">
+            <h2>Conheça esses álbuns</h2>
+            <div class="section-header-actions">
+              <div class="carousel-controls" aria-label="Controles do carrossel">
+                <button id="albumPrevBtn" class="carousel-button" type="button"
+                  aria-label="Voltar cards">&#10094;</button>
+                <button id="albumNextBtn" class="carousel-button" type="button"
+                  aria-label="Avancar cards">&#10095;</button>
+              </div>
+              <a href="#" class="see-all"></a>
+            </div>
+          </div>
+
+          <!-- Carrossel de álbuns -->
+          <div class="cards-carousel">
+            <div class="cards albums-track">
+              <a href="main.html?id=ghost" class="card-link">
+                <div class="card">
+                  <div class="card-image">
+                    <img src="img/seveninches.jpeg" alt="Álbum 1">
+                  </div>
+                  <p class="card-title">Seven Inches of Satanic Panic</p>
+                  <p class="card-subtitle">Ghost</p>
+                </div>
+              </a>
+
+              <a href="main.html?id=kanye" class="card-link">
+                <div class="card">
+                  <div class="card-image">
+                    <img src="img/twistedfantasy.jfif" alt="Álbum 2">
+                  </div>
+                  <p class="card-title">My Beautiful Dark Twisted Fantasy</p>
+                  <p class="card-subtitle">Kanye West</p>
+                </div>
+              </a>
+
+              <a href="main.html?id=kanye" class="card-link">
+                <div class="card">
+                  <div class="card-image">
+                    <img src="img/graduation.jpg" alt="Álbum 3">
+                  </div>
+                  <p class="card-title">Graduation</p>
+                  <p class="card-subtitle">Kanye West</p>
+                </div>
+              </a>
+
+              <a href="main.html?id=slipknot" class="card-link">
+                <div class="card">
+                  <div class="card-image">
+                    <img src="img/iowa.jpg" alt="Álbum 4">
+                  </div>
+                  <p class="card-title">Iowa</p>
+                  <p class="card-subtitle">Slipknot - 2001</p>
+                </div>
+              </a>
+
+              <a href="main.html?id=deftones" class="card-link">
+                <div class="card">
+                  <div class="card-image">
+                    <img src="img/aroundthefur.jpg" alt="Álbum 5">
+                  </div>
+                  <p class="card-title">Around the Fur</p>
+                  <p class="card-subtitle">Deftones - 2000</p>
+                </div>
+              </a>
+
+              <a href="main.html?id=mitski" class="card-link">
+                <div class="card">
+                  <div class="card-image">
+                    <img src="img/bethecowboy.jpg" alt="Álbum 6">
+                  </div>
+                  <p class="card-title">Be the Cowboy</p>
+                  <p class="card-subtitle">Mitski - 2018</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Lista de artistas em Destaque -->
+        <section id="ArtistasDestaque">
+          <div class="section-header">
+            <h2>Artistas em Destaque</h2>
+          </div>
+
+
+          <div class="artistas">
+            <a href="main.html?id=kanye" class="artista" style="text-decoration: none;">
+              <div class="artista-img-wrapper">
+                <img src="img/kanye.jfif" alt="Perfil 1">
+              </div>
+              <p>Kanye West</p>
+            </a>
+
+            <a href="main.html?id=ghost" class="artista" style="text-decoration: none;">
+              <div class="artista-img-wrapper">
+                <img src="img/ghost.jfif" alt="Perfil 2">
+              </div>
+              <p>Ghost</p>
+            </a>
+
+            <a href="main.html?id=mitski" class="artista" style="text-decoration: none;">
+              <div class="artista-img-wrapper">
+                <img src="img/Mitskiperfil.jpg" alt="Perfil 3">
+              </div>
+              <p>Mitski</p>
+            </a>
+
+            <a href="main.html?id=slipknot" class="artista" style="text-decoration: none;">
+              <div class="artista-img-wrapper">
+                <img src="img/Slipknotperfil.jfif" alt="Perfil 4">
+              </div>
+              <p>Slipknot</p>
+            </a>
+
+            <a href="main.html?id=deftones" class="artista" style="text-decoration: none;">
+              <div class="artista-img-wrapper">
+                <img src="img/deftonesperfil.jfif" alt="Perfil 5">
+              </div>
+              <p>Deftones</p>
+            </a>
+          </div>
+        </section>
+
+        </div>
+
+        <section id="artistPageView" class="artist-page" style="display: none;">
+          <section id="artistHero" class="artist-hero">
+            <div class="artist-hero-info">
+              <h1 id="artistName" class="artist-name">Carregando artista...</h1>
+              <p id="artistListeners" class="artist-listeners">Montando palco...</p>
+              <button id="followBtn" class="btn-premium" type="button" style="margin-top: 15px;">Seguir</button>
+            </div>
+          </section>
+
+          <section id="artistSongsSection">
+            <div class="section-header">
+              <h2>Músicas Populares</h2>
+            </div>
+            <div class="cards" id="artistSongs"></div>
+          </section>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- Rodape institucional -->
+  <footer>
+    <p>© 2026 Lyrics - Trabalho de Cifras</p>
+  </footer>
+
+  <!-- Botao que abre a aba flutuante de recomendacoes -->
+  <button id="floatingRecommendationsBtn" class="floating-recommendations-btn" type="button"
+    aria-controls="floatingRecommendationsTab" aria-expanded="false">
+    Ver recomendações
+  </button>
+
+  <!-- Aba flutuante com recomendacoes -->
+  <section id="floatingRecommendationsTab" class="floating-recommendations-tab" aria-hidden="true">
+    <div class="floating-tab-header" id="floatingTabDragHandle">
+      <h3>Recomendações</h3>
+      <button id="floatingTabClose" class="floating-tab-close" type="button" aria-label="Fechar aba">×</button>
+    </div>
+
+    <div id="floatingRecommendationsContent" class="floating-tab-content">
+      <div class="recommendation-item">Stronger - Kanye West</div>
+      <div class="recommendation-item">Mary On A Cross - Ghost</div>
+      <div class="recommendation-item">Washing Machine Heart - Mitski</div>
+      <div class="recommendation-item">People = Shit - Slipknot</div>
+      <div class="recommendation-item">Be Quiet and Drive - Deftones</div>
+    </div>
+  </section>
+
+  <!-- Modal principal com os dados do perfil do usuario -->
+  <div id="profileModal" class="modal">
+    <div class="modal-overlay" id="closeProfileOverlay"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="closeProfileBtn" type="button">×</button>
+
+      <div class="profile-panel">
+        <div class="profile-panel-header">
+          <div class="profile-img-container" id="profileImageClickable" title="Mudar foto de perfil" tabindex="0">
+            <div class="profile-img" id="profileImageDisplay" aria-hidden="true">👤</div>
+            <div class="profile-img-overlay">📸</div>
+            <input type="file" id="profileImageInput" accept="image/png, image/jpeg, image/webp" hidden />
+          </div>
+          <h1 id="profileDisplayName">Usuário</h1>
+          <p id="profileDisplayEmail">meu.email@exemplo.com</p>
+        </div>
+
+        <div class="profile-panel-content">
+          <div class="profile-section">
+            <h2 class="titulo">Informações Pessoais</h2>
+            <div class="profile-item">
+              <div class="profile-item-data">
+                <label>Nome Completo</label>
+                <p id="profileFullNameValue" class="profile-item-value">João Silva Santos</p>
+                <input type="text" id="editFullNameInput" class="profile-item-input" style="display:none;" />
+              </div>
+              <button class="btn-edit" id="editNameBtn" type="button">Editar</button>
+            </div>
+            <div class="profile-item">
+              <div class="profile-item-data">
+                <label>Email</label>
+                <p id="profileEmailValue" class="profile-item-value">meu.email@exemplo.com</p>
+                <input type="email" id="editEmailInput" class="profile-item-input" style="display:none;" />
+              </div>
+              <button class="btn-edit" id="editEmailBtn" type="button">Editar</button>
+            </div>
+            <div class="profile-item">
+              <div class="profile-item-data">
+                <label>Telefone</label>
+                <p id="profilePhoneValue" class="profile-item-value">(11) 98765-4321</p>
+                <input type="text" id="editPhoneInput" class="profile-item-input" style="display:none;" />
+              </div>
+              <button class="btn-edit" id="editPhoneBtn" type="button">Editar</button>
+            </div>
+          </div>
+
+          <div class="profile-section">
+            <h2>Assinatura</h2>
+            <div class="profile-item">
+              <div>
+                <label>Plano</label>
+                <p id="profilePlanValue" class="profile-item-value">Premium</p>
+              </div>
+            </div>
+            <div class="profile-item">
+              <div>
+                <label>Válido até</label>
+                <p class="profile-item-value">30 de Dezembro, 2026</p>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- Modal de login exibido antes do acesso ao perfil -->
+
+  <div id="loginModal" class="modal" aria-hidden="true">
+    <div class="modal-overlay" id="closeLoginOverlay"></div>
+    <div class="modal-content login-modal-content" role="dialog" aria-modal="true" aria-labelledby="loginModalTitle">
+      <button class="modal-close" id="closeLoginBtn" type="button" aria-label="Fechar login">×</button>
+      <div class="login-modal-body">
+        <h2 id="loginModalTitle">Entrar para acessar Meu perfil</h2>
+        <p>Informe seu e-mail e senha para continuar.</p>
+
+        <!-- Formulário de login -->
+        <form id="loginForm" class="login-form">
+          <label for="loginEmail">E-mail</label>
+          <input id="loginEmail" name="email" type="email" placeholder="seu.email@exemplo.com" required />
+
+          <label for="loginPassword">Senha</label>
+          <input id="loginPassword" name="password" type="password" placeholder="Digite sua senha" required
+            minlength="4" />
+
+          <p id="loginFeedback" class="login-feedback" aria-live="polite"></p>
+
+          <button class="btn-premium" type="submit">Entrar</button>
+          <p class="auth-toggle-text">Não tem conta? <button type="button" id="goToSignupBtn"
+              class="auth-toggle-link">Cadastre-se</button></p>
+        </form>
+
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Pop-up independente de cadastro -->
+  <div id="signupModal" class="modal" aria-hidden="true">
+    <div class="modal-overlay" id="closeSignupOverlay"></div>
+    <div class="modal-content login-modal-content" role="dialog" aria-modal="true" aria-labelledby="signupModalTitle">
+      <button class="modal-close" id="closeSignupBtn" type="button" aria-label="Fechar cadastro">×</button>
+      <div class="login-modal-body">
+        <h2 id="signupModalTitle">Criar uma conta</h2>
+        <p>Preencha os campos abaixo para se cadastrar.</p>
+        <form id="signupForm" class="login-form">
+          <label for="signupName">Nome</label>
+          <input id="signupName" name="name" type="text" placeholder="Seu nome completo" required />
+
+          <label for="signupEmail">E-mail</label>
+          <input id="signupEmail" name="email" type="email" placeholder="seu.email@exemplo.com" required />
+
+          <label for="signupPassword">Senha</label>
+          <input id="signupPassword" name="password" type="password" placeholder="Minimo 6 caracteres" required
+            minlength="6" />
+
+          <label for="signupConfirm">Confirmar senha</label>
+          <input id="signupConfirm" name="confirm" type="password" placeholder="Repita a senha" required
+            minlength="6" />
+
+          <p id="signupFeedback" class="login-feedback" aria-live="polite"></p>
+
+          <button class="btn-premium" type="submit">Criar conta</button>
+          <p class="auth-toggle-text">Já tem conta? <button type="button" id="goToLoginBtn"
+              class="auth-toggle-link">Entrar</button></p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div id="floatingMenuOverlay" class="floating-menu-overlay" aria-hidden="true"></div>
+  <aside id="floatingMenuDrawer" class="floating-menu-drawer" aria-hidden="true">
+    <div class="floating-menu-header">
+      <h3>Menu</h3>
+      <button id="floatingMenuClose" class="floating-menu-close" type="button" aria-label="Fechar menu">×</button>
+    </div>
+    <nav id="floatingMenuContent" class="floating-menu-content">
+      <h3>Menu</h3>
+      <div class="menu-item active"><a href="main.html#inicio">Início</a></div>
+      <div class="menu-item"><a href="#musicas">Músicas populares</a></div>
+      <div class="menu-item"><a href="#album">Álbuns</a></div>
+      <div class="menu-item"><a href="#ArtistasDestaque">Principais Artistas</a></div>
+    </nav>
+
+  </aside>
+
+  <!-- Modal de Letra da Música -->
+  <div id="lyricsModal" class="modal" aria-hidden="true">
+    <div class="modal-overlay" id="closeLyricsOverlay"></div>
+    <div class="modal-content lyrics-modal-content" role="dialog" aria-modal="true" aria-labelledby="lyricsModalTitle">
+      <button class="modal-close" id="closeLyricsBtn" type="button" aria-label="Fechar letra">×</button>
+
+      <div class="lyrics-modal-body">
+        <!-- Cabeçalho com informações da música -->
+        <div class="lyrics-header">
+          <img id="lyricsModalCover" class="lyrics-cover" src="" alt="Capa do álbum">
+          <div class="lyrics-header-info">
+            <h2 id="lyricsModalTitle">Título da Música</h2>
+            <p id="lyricsModalArtist">Artista</p>
+            <p id="lyricsModalAlbum">Álbum</p>
+          </div>
+          <div class="lyrics-controls">
+            <button id="lyricsPlayBtn" class="lyrics-play-btn" type="button" aria-label="Ouvir música">
+              <span id="playIcon">▶</span>
+            </button>
+            <div class="lyrics-audio-info">
+              <span class="lyrics-time" id="lyricsTime">00:00 / 00:00</span>
+              <div class="lyrics-progress-bar">
+                <div class="lyrics-progress-fill" id="lyricsProgressFill"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Corpo da letra com scroll -->
+        <div class="lyrics-body">
+          <pre id="lyricsModalText" class="lyrics-text">Carregando letra...</pre>
+          <div id="lyricsFeedback" class="login-feedback" style="text-align: center; margin-top: 20px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
